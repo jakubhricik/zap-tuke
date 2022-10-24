@@ -1,0 +1,109 @@
+<h2>The Rules</h2>
+<ul>
+<li>Vo výslednom kóde nesmiete používať premenné (ak premenné už poznáte).</li>
+<li>Pri preklade kódu sú použité nasledovné prepínače: <code>-std=c11 -Wall -Werror -lsuperkarel -lcurses</code>.</li>
+<li>Pri implementácii môžete použiť knižnicu <code>superkarel.h</code>.</li>
+<li>Pri práci môžete použiť <a href="https://kurzy.kpi.fei.tuke.sk/zap/tutorials/karel-api.html">Referenčnú príručku ku knižnici robota Karla</a>.</li>
+<li>K dispozícii máte aj celý obsah stránky predmetu <a href="kurzy.kpi.fei.tuke.sk/zap">Základy algoritmizácie a programovania</a>.</li>
+</ul>
+<h1>Uloha 1</h1>
+<h2>Funkcia <code>void pick_all()</code> (1b)</h2>
+<p>Vytvorte funkciu <code>void pick_all()</code>, pomocou ktorej robot Karel pozbiera všetky značky na danej pozícii.</p>
+<h3>Return</h3>
+<p>Funkcia nevráti žiadnu hodnotu.</p>
+<h2>Funkcia <code>void put_all()</code> (1b)</h2>
+<p>Vytvorte funkciu <code>void put_all()</code>, pomocou ktorej robot Karel vyloží všetky značky z batoha.</p>
+<h3>Return</h3>
+<p>Funkcia nevráti žiadnu hodnotu.</p>
+<h2>Funkcia <code>void find_north_east()</code> (2b)</h2>
+<p>Vytvorte funkciu <code>void find_north_east()</code>, ktorá premiestni robota Karla do pravého horného rohu sveta.</p>
+<h3>Return</h3>
+<p>Funkcia nevráti žiadnu hodnotu.</p>
+<h3>Počiatočná situácia</h3>
+<p>Na začiatku sa robot Karel nachádza na ľubovoľnej pozícii vo svete.</p>
+<h3>Koncová situácia</h3>
+<p>Na konci sa robot Karel nachádza na severovýchode, teda v pravom hornom rohu sveta, otočený smerom na západ.</p>
+<h1>Uloha 2</h1>
+<h2>Funkcia <code>olympics()</code> (3b)</h2>
+<p>Vytvorte funkciu <code>void olympics()</code>, pomocou ktorej robot Karel preskočí ľubovoľne vysoké prekážky. Robot sa zastaví na značke.</p>
+<h3>Return</h3>
+<p>Funkcia nevráti žiadnu hodnotu.</p>
+<h3>Počiatočná situácia</h3>
+<p>Robot Karel stojí na začiatku prekážkovej trate.</p>
+<pre><code> CORNER  FACING  BEEP-BAG  BEEP-CORNER
+ (1, 1)   EAST      10         0
+ST.+---------------------------------------+
+ 6 | .   .   .   .   .   .   .   .   .   . |
+   |               |                       |
+ 5 | .   .   .   . | .   .   .   .   .   . |
+   |               |	   |               |
+ 4 | .   .   .   . | .   . | .   .   .   . |
+   |               |	   |           |   |
+ 3 | .   .   .   . | .   . | .   .   . | . |
+   |   |           |	   |	   |   |   |
+ 2 | . | .   .   . | .   . | .   . | . | . |
+   |   |   |	   |	   |	   |   |   |
+ 1 | &gt; | . | .   . | .   . | .   . | 1 | . |
+   +---------------------------------------+
+     1   2   3   4   5   6   7   8   9   10  AVE.
+</code></pre>
+<h3>Koncová situácia</h3>
+<p>Robot Karel stojí na značke, otočený smerom na východ.</p>
+<pre><code> CORNER  FACING  BEEP-BAG  BEEP-CORNER
+ (9, 1)   EAST      10         1
+ST.+---------------------------------------+
+ 6 | .   .   .   .   .   .   .   .   .   . |
+   |               |                       |
+ 5 | .   .   .   . | .   .   .   .   .   . |
+   |               |	   |               |
+ 4 | .   .   .   . | .   . | .   .   .   . |
+   |               |	   |           |   |
+ 3 | .   .   .   . | .   . | .   .   . | . |
+   |   |           |	   |	   |   |   |
+ 2 | . | .   .   . | .   . | .   . | . | . |
+   |   |   |	   |	   |	   |   |   |
+ 1 | . | . | .   . | .   . | .   . | &gt; | . |
+   +---------------------------------------+
+     1   2   3   4   5   6   7   8   9   10  AVE.
+</code></pre>
+<h1>Uloha 3</h1>
+<h2>Funkcia <code>chessboard()</code> (4b)</h2>
+<p>Vytvorte funkciu <code>void chessboard()</code>, pomocou ktorej Karel dokáže vytvoriť šachovnicu ľubovoľnej veľkosti.</p>
+<p>Čierne políčko je bez značky Biele políčko obsahuje značku. Karel bude začínať v ľavom dolnom rohu, kde je vždy políčko čierne.</p>
+<h3>Return</h3>
+<p>Funkcia nevráti žiadnu hodnotu.</p>
+<h3>Počiatočná situácia</h3>
+<p>Karel začína v ľavom dolnom rohu sveta (čierne políčko).</p>
+<pre><code> CORNER  FACING  BEEP-BAG  BEEP-CORNER
+ (5, 5)   NORTH     100        0
+ ST.+-------------------+
+  5 | .   .   .   .   . |
+    |                   |
+  4 | .   .   .   .   . |
+    |                   |
+  3 | .   .   .   .   . |
+    |                   |
+  2 | .   .   .   .   . |
+    |                   |
+  1 | &gt;   .   .   .   . |
+    +-------------------+
+      1   2   3   4   5   AVE.
+</code></pre>
+<h3>Koncová situácia</h3>
+<p>Vo svete je vytvorená šachovnica.</p>
+<pre><code> CORNER  FACING  BEEP-BAG  BEEP-CORNER
+ (5, 5)   NORTH     88         0
+ ST.+-------------------+
+  5 | .   1   .   1   ^ |
+    |                   |
+  4 | 1   .   1   .   1 |
+    |                   |
+  3 | .   1   .   1   . |
+    |                   |
+  2 | 1   .   1   .   1 |
+    |                   |
+  1 | .   1   .   1   . |
+    +-------------------+
+      1   2   3   4   5   AVE.
+</code></pre>
+
